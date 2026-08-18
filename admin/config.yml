@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: karavadiharshith107-hub/h23works-website
+  branch: main
+
+media_folder: "media"
+public_folder: "/media"
+publish_mode: simple
+
+collections:
+  - name: website
+    label: H23 Website
+    files:
+      - name: site
+        label: Website Content
+        file: content/site.json
+        fields:
+          - label: Company
+            name: site
+            widget: object
+            fields:
+              - {label: Company Name, name: company, widget: string}
+              - {label: Tagline, name: tagline, widget: string}
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - {label: Line 1, name: line1, widget: string}
+                  - {label: Line 2, name: line2, widget: string}
+                  - {label: Line 3, name: line3, widget: string}
+                  - {label: Line 4, name: line4, widget: string}
+                  - {label: Description, name: description, widget: text}
+              - label: Contact
+                name: contact
+                widget: object
+                fields:
+                  - {label: Phone, name: phone, widget: string}
+                  - {label: WhatsApp Number, name: whatsapp, widget: string}
+                  - {label: Email, name: email, widget: string}
+                  - {label: Location, name: location, widget: string}
+              - label: Social Media
+                name: socials
+                widget: object
+                fields:
+                  - {label: Instagram URL, name: instagram, widget: string}
+                  - {label: LinkedIn URL, name: linkedin, widget: string, required: false}
+                  - {label: X URL, name: x, widget: string, required: false}
+              - label: Homepage Statistics
+                name: stats
+                widget: list
+                fields:
+                  - {label: Number, name: number, widget: string}
+                  - {label: Label, name: label, widget: string}
+                  - {label: Detail, name: detail, widget: string}
+          - label: Services
+            name: services
+            widget: list
+            summary: '{{fields.number}} — {{fields.title}}'
+            fields:
+              - {label: Number, name: number, widget: string}
+              - {label: Category, name: category, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Icon, name: icon, widget: string}
+              - {label: Visual Style, name: style, widget: select, options: [purple, blue, green, gold, red]}
+          - label: Our Work / Projects
+            name: projects
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - {label: Project Title, name: title, widget: string}
+              - {label: Category, name: category, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Visual Label, name: label, widget: string}
+              - {label: Project Image, name: image, widget: image, required: false}
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - {label: Quote, name: quote, widget: text}
+              - {label: Client Name, name: name, widget: string}
+              - {label: Role / Company, name: role, widget: string}
+          - label: FAQs
+            name: faqs
+            widget: list
+            fields:
+              - {label: Question, name: question, widget: string}
+              - {label: Answer, name: answer, widget: text}

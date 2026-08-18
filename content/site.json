@@ -1,0 +1,129 @@
+{
+  "site": {
+    "company": "H23 Works",
+    "tagline": "Human Support. Digital Solutions. Smarter Business.",
+    "hero": {
+      "line1": "We Design.",
+      "line2": "We Build.",
+      "line3": "We Support.",
+      "line4": "You Grow.",
+      "description": "H23 Works helps businesses build a stronger digital presence, deliver dependable customer support and automate repetitive work."
+    },
+    "contact": {
+      "phone": "+91 99666 02169",
+      "whatsapp": "919966602169",
+      "email": "h23workss@gmail.com",
+      "location": "Hyderabad, India"
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/h23works/",
+      "linkedin": "https://www.linkedin.com/",
+      "x": "https://x.com/"
+    },
+    "stats": [
+      {
+        "number": "10+",
+        "label": "Website Projects",
+        "detail": "Completed"
+      },
+      {
+        "number": "1+",
+        "label": "Chat & Voice Support",
+        "detail": "Client"
+      },
+      {
+        "number": "24/7",
+        "label": "Support",
+        "detail": "Availability"
+      },
+      {
+        "number": "HYD",
+        "label": "Hyderabad",
+        "detail": "India"
+      }
+    ]
+  },
+  "services": [
+    {
+      "number": "01",
+      "category": "DIGITAL",
+      "title": "Website Design",
+      "description": "Modern, responsive websites designed to make your business look credible and convert visitors.",
+      "icon": "▣",
+      "style": "purple"
+    },
+    {
+      "number": "02",
+      "category": "DEVELOPMENT",
+      "title": "Web Development",
+      "description": "Fast, scalable business websites and web experiences built around your goals.",
+      "icon": "</>",
+      "style": "blue"
+    },
+    {
+      "number": "03",
+      "category": "BPO",
+      "title": "Chat & Voice Support",
+      "description": "Customer support for enquiries, troubleshooting, follow-ups and day-to-day conversations.",
+      "icon": "◉",
+      "style": "green"
+    },
+    {
+      "number": "04",
+      "category": "CHAT",
+      "title": "Live Chat Support",
+      "description": "Human-led chat support that engages website visitors and helps businesses respond faster.",
+      "icon": "▤",
+      "style": "gold"
+    },
+    {
+      "number": "05",
+      "category": "VOICE",
+      "title": "Call Support",
+      "description": "Professional voice support for customer care, enquiries, sales assistance and escalation handling.",
+      "icon": "☎",
+      "style": "red"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Digital Experiences",
+      "category": "WEBSITE DEVELOPMENT",
+      "description": "Professional websites built around trust, clarity and enquiries.",
+      "label": "WEB"
+    },
+    {
+      "title": "Customer Conversations",
+      "category": "CUSTOMER SUPPORT",
+      "description": "Chat and voice support experiences.",
+      "label": "BPO"
+    },
+    {
+      "title": "Smarter Workflows",
+      "category": "AUTOMATION",
+      "description": "Practical processes connected for better efficiency.",
+      "label": "AUTO"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Add your first client testimonial here.",
+      "name": "Client Name",
+      "role": "Client / Company"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What services does H23 Works provide?",
+      "answer": "H23 Works provides website design and development, chat and voice BPO support, live chat support, call support and business automation."
+    },
+    {
+      "question": "How can I start a project?",
+      "answer": "Use the contact section, WhatsApp or email us at h23workss@gmail.com and tell us what you need."
+    },
+    {
+      "question": "Where is H23 Works based?",
+      "answer": "H23 Works is based in Hyderabad, India and can support businesses remotely."
+    }
+  ]
+}
