@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: karavadiharshith107-hub/h23works-website
+  name: git-gateway
   branch: main
 
 media_folder: "media"
