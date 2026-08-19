@@ -4,9 +4,9 @@
   "email": "h23workss@gmail.com",
   "location": "Hyderabad, India",
   "form": {
-    "mode": "mailto",
-    "appsScriptEndpoint": "",
-    "successMessage": "Thanks — your enquiry is ready to send."
+    "mode": "apps-script",
+    "appsScriptEndpoint": "https://script.google.com/macros/s/AKfycbwg5pZKvs32_PbmMFATSSln6OVFZb0rR5A8kDtYmkFU2Z65ArLKhMtwAhBxxEyNct4M2A/exec",
+    "successMessage": "Thanks \u2014 your enquiry has been sent. We will get back to you soon."
   },
   "socials": {
     "instagram": "https://www.instagram.com/h23works/",

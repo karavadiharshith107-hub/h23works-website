@@ -13,7 +13,7 @@ This version keeps the cinematic H23 design and turns the CMS into a section-bas
 - Site Settings / SEO
 
 ## Enquiry form
-The default mode remains `mailto` so the site works without a paid form subscription. The Contact CMS includes an optional Google Apps Script endpoint. If your Apps Script is ready and tested, select `apps-script`, paste the endpoint, publish, and test one enquiry.
+The Contact CMS supports `mailto` and `apps-script` modes. H23 currently uses `apps-script` with a tested Google Apps Script endpoint that records enquiries in Google Sheets and sends an email notification. If the endpoint changes, update the Contact CMS field and publish, then test one enquiry before relying on it in production.
 
 ## Authentication
 The config uses Netlify Identity + Git Gateway (`git-gateway`) on `main`. The Netlify Identity widget and login redirect are included in `index.html`.
