@@ -7,50 +7,47 @@ public_folder: "/media"
 publish_mode: simple
 
 collections:
-  - name: website
-    label: H23 Website
+  - name: home
+    label: Home
     files:
-      - name: site
-        label: Website Content
-        file: content/site.json
+      - name: home
+        label: Home Content
+        file: content/home.json
         fields:
-          - label: Company
-            name: site
+          - label: Hero
+            name: hero
             widget: object
             fields:
-              - {label: Company Name, name: company, widget: string}
-              - {label: Tagline, name: tagline, widget: string}
-              - label: Hero
-                name: hero
-                widget: object
-                fields:
-                  - {label: Line 1, name: line1, widget: string}
-                  - {label: Line 2, name: line2, widget: string}
-                  - {label: Line 3, name: line3, widget: string}
-                  - {label: Line 4, name: line4, widget: string}
-                  - {label: Description, name: description, widget: text}
-              - label: Contact
-                name: contact
-                widget: object
-                fields:
-                  - {label: Phone, name: phone, widget: string}
-                  - {label: WhatsApp Number, name: whatsapp, widget: string}
-                  - {label: Email, name: email, widget: string}
-                  - {label: Location, name: location, widget: string}
-              - label: Social Media
-                name: socials
-                widget: object
-                fields:
-                  - {label: Instagram URL, name: instagram, widget: string}
-                  - {label: LinkedIn URL, name: linkedin, widget: string, required: false}
-                  - {label: X URL, name: x, widget: string, required: false}
-              - label: Homepage Statistics
-                name: stats
-                widget: list
-                fields:
-                  - {label: Number, name: number, widget: string}
-                  - {label: Label, name: label, widget: string}
-                  - {label: Detail, name: detail, widget: string}
+              - {label: Line 1, name: line1, widget: string}
+              - {label: Line 2, name: line2, widget: string}
+              - {label: Line 3, name: line3, widget: string}
+              - {label: Line 4, name: line4, widget: string}
+              - {label: Description, name: description, widget: text}
+          - label: Homepage Statistics
+            name: stats
+            widget: list
+            summary: '{{fields.number}} — {{fields.label}}'
+            fields:
+              - {label: Number, name: number, widget: string}
+              - {label: Label, name: label, widget: string}
+              - {label: Detail, name: detail, widget: string}
+          - label: H23 Difference
+            name: solutions
+            widget: object
+            fields:
+              - {label: Eyebrow, name: eyebrow, widget: string}
+              - {label: Title Line 1, name: title_line1, widget: string}
+              - {label: Title Line 2, name: title_line2, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Points, name: points, widget: list}
+
+  - name: services
+    label: Services
+    files:
+      - name: services
+        label: Services
+        file: content/services.json
+        fields:
           - label: Services
             name: services
             widget: list
@@ -62,7 +59,15 @@ collections:
               - {label: Description, name: description, widget: text}
               - {label: Icon, name: icon, widget: string}
               - {label: Visual Style, name: style, widget: select, options: [purple, blue, green, gold, red]}
-          - label: Our Work / Projects
+
+  - name: projects
+    label: Our Work
+    files:
+      - name: projects
+        label: Projects / Portfolio
+        file: content/projects.json
+        fields:
+          - label: Projects
             name: projects
             widget: list
             summary: '{{fields.title}}'
@@ -72,16 +77,91 @@ collections:
               - {label: Description, name: description, widget: text}
               - {label: Visual Label, name: label, widget: string}
               - {label: Project Image, name: image, widget: image, required: false}
+
+  - name: about
+    label: About
+    files:
+      - name: about
+        label: About H23
+        file: content/about.json
+        fields:
+          - {label: Eyebrow, name: eyebrow, widget: string}
+          - {label: Title Line 1, name: title_line1, widget: string}
+          - {label: Title Line 2, name: title_line2, widget: string}
+          - {label: Description, name: description, widget: text}
+          - {label: Highlights, name: highlights, widget: list}
+
+  - name: testimonials
+    label: Testimonials
+    files:
+      - name: testimonials
+        label: Client Testimonials
+        file: content/testimonials.json
+        fields:
+          - {label: Intro, name: intro, widget: text}
           - label: Testimonials
             name: testimonials
             widget: list
+            summary: '{{fields.name}}'
             fields:
               - {label: Quote, name: quote, widget: text}
               - {label: Client Name, name: name, widget: string}
               - {label: Role / Company, name: role, widget: string}
+
+  - name: faq
+    label: FAQ
+    files:
+      - name: faq
+        label: Frequently Asked Questions
+        file: content/faq.json
+        fields:
           - label: FAQs
             name: faqs
             widget: list
+            summary: '{{fields.question}}'
             fields:
               - {label: Question, name: question, widget: string}
               - {label: Answer, name: answer, widget: text}
+
+  - name: contact
+    label: Contact & Socials
+    files:
+      - name: contact
+        label: Contact Details
+        file: content/contact.json
+        fields:
+          - {label: Phone, name: phone, widget: string}
+          - {label: WhatsApp Number, name: whatsapp, widget: string}
+          - {label: Email, name: email, widget: string}
+          - {label: Location, name: location, widget: string}
+          - label: Social Media
+            name: socials
+            widget: object
+            fields:
+              - {label: Instagram URL, name: instagram, widget: string}
+              - {label: LinkedIn URL, name: linkedin, widget: string, required: false}
+              - {label: X URL, name: x, widget: string, required: false}
+          - label: Enquiry Form
+            name: form
+            widget: object
+            fields:
+              - label: Mode
+                name: mode
+                widget: select
+                options: [mailto, apps-script]
+                default: mailto
+              - {label: Google Apps Script Endpoint, name: appsScriptEndpoint, widget: string, required: false}
+              - {label: Success Message, name: successMessage, widget: string}
+
+  - name: settings
+    label: Site Settings
+    files:
+      - name: settings
+        label: Brand & SEO
+        file: content/site-settings.json
+        fields:
+          - {label: Company Name, name: company, widget: string}
+          - {label: Tagline, name: tagline, widget: string}
+          - {label: Meta Description, name: metaDescription, widget: text}
+
+# Service catalog: Chat Support and Voice Support remain separate entries; Website Maintenance is also available.

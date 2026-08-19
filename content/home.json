@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "line1": "We Design.",
+    "line2": "We Build.",
+    "line3": "We Support.",
+    "line4": "You Grow.",
+    "description": "H23 Works helps businesses build a stronger digital presence, deliver dependable customer support and automate repetitive work."
+  },
+  "stats": [
+    {
+      "number": "10+",
+      "label": "Website Projects",
+      "detail": "Completed"
+    },
+    {
+      "number": "1+",
+      "label": "Chat & Voice Support",
+      "detail": "Client"
+    },
+    {
+      "number": "24/7",
+      "label": "Support",
+      "detail": "Availability"
+    },
+    {
+      "number": "HYD",
+      "label": "Hyderabad",
+      "detail": "India"
+    }
+  ],
+  "solutions": {
+    "eyebrow": "THE H23 DIFFERENCE",
+    "title_line1": "Human intelligence",
+    "title_line2": "meets technology.",
+    "description": "We combine people, process and technology instead of forcing every business problem into another tool.",
+    "points": [
+      "01 / PEOPLE",
+      "02 / PROCESS",
+      "03 / TECHNOLOGY"
+    ]
+  }
+}

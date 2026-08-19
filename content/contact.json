@@ -1,0 +1,16 @@
+{
+  "phone": "+91 99666 02169",
+  "whatsapp": "919966602169",
+  "email": "h23workss@gmail.com",
+  "location": "Hyderabad, India",
+  "form": {
+    "mode": "mailto",
+    "appsScriptEndpoint": "",
+    "successMessage": "Thanks — your enquiry is ready to send."
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/h23works/",
+    "linkedin": "https://www.linkedin.com/",
+    "x": "https://x.com/"
+  }
+}
