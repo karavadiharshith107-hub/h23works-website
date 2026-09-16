@@ -1,10 +1,10 @@
 {
-  "intro": "Real feedback will appear here as H23 grows.",
+  "intro": "Client feedback and experiences with H23 Works.",
   "testimonials": [
     {
-      "quote": "Add your first client testimonial here.",
-      "name": "Client Name",
-      "role": "Client / Company"
+      "quote": "H23 Works provided us with an exceptionally professional experience. Despite being a startup, their team delivered the level of expertise, responsiveness and professionalism we would expect from an experienced industry provider. The quality of service was excellent, and we were genuinely impressed with their commitment to delivering the best possible experience.",
+      "name": "Blue Collar Software Solutions",
+      "role": "Client"
     }
   ]
 }

@@ -1,60 +1,24 @@
 {
   "services": [
     {
-      "number": "01",
-      "category": "DIGITAL",
-      "title": "Website Design",
-      "description": "Modern, responsive websites designed to make your business look credible and convert visitors.",
-      "icon": "▣",
-      "style": "purple"
+      "number":"01","category":"BPO","title":"Chat Support",
+      "description":"Human-led customer conversations for enquiries, assistance, follow-ups and day-to-day support.","icon":"◉","style":"gold"
     },
     {
-      "number": "02",
-      "category": "DEVELOPMENT",
-      "title": "Web Development",
-      "description": "Fast, scalable business websites and web experiences built around your goals.",
-      "icon": "</>",
-      "style": "blue"
+      "number":"02","category":"BPO","title":"Voice Support",
+      "description":"Professional voice support for customer care, enquiries, sales assistance and escalation handling.","icon":"☎","style":"gold"
     },
     {
-      "number": "03",
-      "category": "BPO",
-      "title": "Chat & Voice Support",
-      "description": "Customer support for enquiries, troubleshooting, follow-ups and day-to-day conversations.",
-      "icon": "◉",
-      "style": "green"
+      "number":"03","category":"DIGITAL","title":"Website Design & Development",
+      "description":"Premium, responsive websites built around your brand, business goals and customer journey.","icon":"▣","style":"gold"
     },
     {
-      "number": "04",
-      "category": "CHAT",
-      "title": "Live Chat Support",
-      "description": "Human-led chat support that engages website visitors and helps businesses respond faster.",
-      "icon": "▤",
-      "style": "gold"
+      "number":"04","category":"WEBSITE","title":"Website Maintenance",
+      "description":"Ongoing updates, fixes, content changes, performance checks and technical support to keep your website running smoothly.","icon":"↻","style":"gold"
     },
     {
-      "number": "05",
-      "category": "VOICE",
-      "title": "Call Support",
-      "description": "Professional voice support for customer care, enquiries, sales assistance and escalation handling.",
-      "icon": "☎",
-      "style": "red"
-    },
-    {
-      "number": "06",
-      "category": "AUTOMATION",
-      "title": "Business Automation",
-      "description": "Practical automations that connect repetitive tasks, follow-ups and business workflows so your team can focus on higher-value work.",
-      "icon": "⚙",
-      "style": "purple"
-    },
-    {
-      "number": "06",
-      "category": "WEBSITE",
-      "title": "Website Maintenance",
-      "description": "Ongoing website updates, content changes, fixes, performance checks and technical support to keep your website running smoothly.",
-      "icon": "↻",
-      "style": "blue"
+      "number":"05","category":"AUTOMATION","title":"Business Automation",
+      "description":"Practical automations that connect repetitive tasks, follow-ups and workflows so your team can focus on higher-value work.","icon":"⚙","style":"gold"
     }
   ]
 }
