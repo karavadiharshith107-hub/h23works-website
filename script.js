@@ -16,4 +16,34 @@ if(form){form.addEventListener('submit',async e=>{e.preventDefault();const statu
 const endpoint='https://script.google.com/macros/s/AKfycbwg5pZKvs32_PbmMFATSSln6OVFZb0rR5A8kDtYmkFU2Z65ArLKhMtwAhBxxEyNct4M2A/exec';
 try{await fetch(endpoint,{method:'POST',body:payload,mode:'no-cors'});status.textContent='Your enquiry has been submitted. If you do not receive a response, please email h23workss@gmail.com.';form.reset();}
 catch(err){const body=`H23 Website Enquiry\\n\\nName: ${data.get('name')}\\nCompany: ${data.get('company')||'Not provided'}\\nEmail: ${data.get('email')}\\nService: ${data.get('service')}\\n\\nMessage:\\n${data.get('message')}`;status.textContent='Could not submit automatically. Opening a Gmail draft…';const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('h23workss@gmail.com')}&su=${encodeURIComponent('H23 Website Enquiry - '+data.get('service'))}&body=${encodeURIComponent(body)}`;window.open(gmail,'_blank','noopener,noreferrer');}
-});}
+// H23 Works: Highlight the navigation item for the visible section.
+const navLinks = document.querySelectorAll('#nav a[href^="#"]');
+const sections = document.querySelectorAll('main section[id]');
+
+if (navLinks.length && sections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visibleSections = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (visibleSections.length) {
+      const activeId = visibleSections[0].target.id;
+
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`;
+        link.classList.toggle('active', isActive);
+
+        if (isActive) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: [0, 0.1, 0.25, 0.5, 0.75]
+  });
+
+  sections.forEach(section => sectionObserver.observe(section));
+}
