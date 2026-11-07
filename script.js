@@ -18,34 +18,87 @@ try{await fetch(endpoint,{method:'POST',body:payload,mode:'no-cors'});status.tex
 catch(err){const body=`H23 Website Enquiry\\n\\nName: ${data.get('name')}\\nCompany: ${data.get('company')||'Not provided'}\\nEmail: ${data.get('email')}\\nService: ${data.get('service')}\\n\\nMessage:\\n${data.get('message')}`;status.textContent='Could not submit automatically. Opening a Gmail draft…';const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('h23workss@gmail.com')}&su=${encodeURIComponent('H23 Website Enquiry - '+data.get('service'))}&body=${encodeURIComponent(body)}`;window.open(gmail,'_blank','noopener,noreferrer');}
 });
 }
-// H23 Works: Highlight the navigation item for the visible section.
-const navLinks = document.querySelectorAll('#nav a[href^="#"]');
-const sections = document.querySelectorAll('main section[id]');
+// H23 Works: Keep navigation highlighting in sync with page sections.
+const nav = document.querySelector('#nav');
+const navLinks = nav
+  ? Array.from(nav.querySelectorAll('a[href^="#"]'))
+  : [];
+
+const sections = navLinks
+  .map(link => document.querySelector(link.getAttribute('href')))
+  .filter(section => section && section.matches('main section[id]'));
 
 if (navLinks.length && sections.length) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    const visibleSections = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+  let ticking = false;
+  let clickLockUntil = 0;
 
-    if (visibleSections.length) {
-      const activeId = visibleSections[0].target.id;
+  const setActive = (id) => {
+    navLinks.forEach(link => {
+      const active = link.hash === `#${id}`;
+      link.classList.toggle('active', active);
 
-      navLinks.forEach(link => {
-        const isActive = link.getAttribute('href') === `#${activeId}`;
-        link.classList.toggle('active', isActive);
+      if (active) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
 
-        if (isActive) {
-          link.setAttribute('aria-current', 'location');
-        } else {
-          link.removeAttribute('aria-current');
-        }
-      });
-    }
-  }, {
-    rootMargin: '-20% 0px -60% 0px',
-    threshold: [0, 0.1, 0.25, 0.5, 0.75]
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      setActive(target.id);
+      clickLockUntil = Date.now() + 700;
+    });
   });
 
-  sections.forEach(section => sectionObserver.observe(section));
-}
+  const updateActiveFromScroll = () => {
+    ticking = false;
+
+    if (Date.now() < clickLockUntil) return;
+
+    const header = document.querySelector('.topbar');
+    const activationY =
+      (header?.getBoundingClientRect().height || 78) + 24;
+
+    let current = sections[0];
+
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= activationY) {
+        current = section;
+      }
+    });
+
+    if (
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 2
+    ) {
+      current = sections[sections.length - 1];
+    }
+
+    setActive(current.id);
+  };
+
+  const requestUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateActiveFromScroll);
+    }
+  };
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+
+  window.addEventListener('hashchange', () => {
+    const target = document.querySelector(location.hash);
+    if (target && target.matches('main section[id]')) {
+      setActive(target.id);
+    }
+  });
+
+  requestUpdate();
+
