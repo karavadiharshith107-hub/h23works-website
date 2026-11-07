@@ -19,11 +19,8 @@ catch(err){const body=`H23 Website Enquiry\\n\\nName: ${data.get('name')}\\nComp
 });
 }
 // H23 Works: Keep navigation highlighting in sync with page sections.
-const nav = document.querySelector('#nav');
-const navLinks = nav
-  ? Array.from(nav.querySelectorAll('a[href^="#"]'))
-  : [];
-
+const navElement = document.querySelector('#nav');const navLinks = navElement
+? Array.from(navElement.querySelectorAll('a[href^="#"]'))  : [];
 const sections = navLinks
   .map(link => document.querySelector(link.getAttribute('href')))
   .filter(section => section && section.matches('main section[id]'));
