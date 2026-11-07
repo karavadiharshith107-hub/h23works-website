@@ -98,4 +98,4 @@ if (navLinks.length && sections.length) {
   });
 
   requestUpdate();
-
+}
